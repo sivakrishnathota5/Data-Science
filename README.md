@@ -40,5 +40,20 @@ concatenate tuples digits + (5,6,7)
 
 String Operations 
 
+s=str(42) # convert object to string 
+s="I LIKE YOU" # assign string 
+s[0] = I  # getting index 0 value 
+s[2:5] =LIKE # using slice to get part of string 
+
+Some usefull string functions :- 
+s.replace('LIKE','LOVE') # using replace function 
+s.lower() # to convert to lower letters 
+s.upper() # to convert to upper letters 
+s.startswith('I') # return True 
+s.endswith('LIKE') # return False 
+s.find('LIKE') # it will return index value 2
+s.find('siva') # it will return -1 
+s.strip() # it will remove space on both sides 
+
 
 
