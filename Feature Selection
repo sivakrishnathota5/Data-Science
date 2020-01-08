@@ -1,0 +1,26 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.feature_selection import SelectKbest,chi2
+from sklearn.esemble import ExtraTreeClassifier
+# Univariate Selection 
+# 1. Select Best feature 
+
+kbestmodel=SelectKbest(k=10,score_func=chi2)
+bestfearures=kbestmodel.fit(x,y)
+df_best=pd.DataFrame(bestfearures.scores_,columns=["Score"])
+df_names=pd.DataFrame(x.columns,columns=["Colname"])
+df=pd.concat([df_best,df_names],axis=1)
+df.sort_values(by='Score',ascending=False)
+
+# 2. Feature Importance (we can use Extra Tree Classifier
+
+featureimpmodel=ExtraTreeClassifier()
+impfit=featureimpmodel.fit(x,y)
+featureimportance=pd.series(impfit.features_importance,index=x.columns)
+featureimportance.nlargest(10).plot(kind='barh')
+plt.show()
+
+#3 Heatmap
+sns.heatmap(df.corr(),annot=True,cmap=plt.cm.RdYlBu_r,vmin=-0.25,vmax=0.6))
