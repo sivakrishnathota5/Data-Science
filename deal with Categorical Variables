@@ -1,0 +1,16 @@
+Measurement scales 
+1. Nominal 
+2. Ordinal 
+3. Interval 
+4. Ratio
+
+Categorial variables are two types 
+1. Nominal :- order not matters 
+   1. Onehotencoding:-  we can use pd.get_dummies method to create columns for each type one column will create 
+                        Here we have concept called dummy variable tap we need to drop one column 
+   2. Many categorial varaible 
+   3. Mean encoding 
+2. Ordinal :- Order matters 
+   1. Label Encoder 
+   2. Target Guided Encoding 
+
